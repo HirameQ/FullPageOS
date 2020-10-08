@@ -39,3 +39,5 @@
 
 # Install and enable x11vnc service
 [ -n "$FULLPAGEOS_INCLUDE_X11VNC" ] || FULLPAGEOS_INCLUDE_X11VNC=no
+
+[ -n "$FULLPAGEOS_USB_AUDIO" ] || $FULLPAGEOS_USB_AUDIO=yes

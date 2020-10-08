@@ -144,6 +144,15 @@ then
     systemctl enable x11vnc.service
 fi
 
+#override password
+if [ "$FULLPAGEOS_USB_AUDIO" == "yes" ]
+then
+    #root password
+    echo "options snd slots=snd_usb_audio,snd_bcm2835" > /etc/modprobe.d/alsa-base-conf
+    echo "option snd_usb_audio index=-2" >> /etc/modprobe.d/alsa-base-conf
+    echo "options snd_bcm2835 index=1" >> /etc/modprobe.d/alsa-base-conf
+fi
+
 #echo "sudo -u pi startx /home/pi/scripts/run_onepageos &" >> /etc/rc.local
 #echo "(sleep 15 ; sudo -u pi /home/pi/scripts/fullscreen) &" >> /etc/rc.local
 
