@@ -30,8 +30,12 @@ apt-get autoremove -y
 
 #apt-get tools
 apt-get -y --force-yes install python2.7 git screen checkinstall avahi-daemon libavahi-compat-libdnssd1 xterm xdotool vim expect
+
 #日本語対応追加
 apt-get -y --force-yes install fcitx-mozc
+#いい方法じゃないけど…
+sed -i 's/DefaultValue=CTRL_SPACE/DefaultValue=CTRL_SPACE ZENKAKUHANKAKU/' /usr/share/fcitx/configdesc/config.desc
+
 if [ "$FULLPAGEOS_INCLUDE_CHROMIUM" == "yes" ]
 then
     apt-get install -y --force-yes chromium-browser
