@@ -27,6 +27,8 @@ jobs:
       run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
     - name: Copy Output
       run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img build.img
+    - name: FileName Check
+      run: ls -la ${{ github.workspace }}/repository/src/workspace/
     - name: Zip Output
       run: gzip build.img
     - uses: actions/upload-artifact@v1
