@@ -34,7 +34,7 @@ apt-get -y --force-yes install python2.7 git screen checkinstall avahi-daemon li
 #日本語対応追加
 apt-get -y --force-yes install fcitx-mozc
 #いい方法じゃないけど…
-sed -i 's/DefaultValue=CTRL_SPACE/DefaultValue=CTRL_SPACE ZENKAKUHANKAKU/' /usr/share/fcitx/configdesc/config.desc
+sed -i 's/DefaultValue=CTRL_SPACE/DefaultValue=ZENKAKUHANKAKU/' /usr/share/fcitx/configdesc/config.desc
 
 if [ "$FULLPAGEOS_INCLUDE_CHROMIUM" == "yes" ]
 then
